@@ -1,0 +1,213 @@
+<!-- <form #f="ngForm">
+  <div class="form-group">
+    <label for="nameRequester">Nome do solicitante</label>
+    <input
+      [disabled]="warehouseman"
+      type="text"
+      [(ngModel)]="nameItem"
+      name="nameItem"
+      class="form-control"
+      id="nameRequester"
+      aria-describedby="nameRequester"
+      placeholder="Digite"
+    />
+  </div>
+  <div class="form-group">
+    <label for="itemDetail">Descrição do item</label>
+    <input
+      [disabled]="warehouseman"
+      type="text"
+      [(ngModel)]="descriptionItem"
+      name="descriptionItem"
+      class="form-control"
+      id="itemDetail"
+      placeholder="Digite"
+    />
+  </div>
+  <div class="form-group">
+    <label for="priceProduct">Preço do produto</label>
+    <input
+      [disabled]="warehouseman"
+      type="text"
+      [(ngModel)]="priceItem"
+      class="form-control"
+      name="priceProduct"
+      id="priceProduct"
+      placeholder="R$ 0,00"
+      (keyup)="formatCurrency()"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+
+
+<!-- Página do Almoxarifado -->
+<!-- <form #f="ngForm">
+  <tr *ngFor="let item of items; let i = index">
+    <div class="row">
+      <td class="form-group col">
+        <label for="nameRequester">Nome do solicitante</label>
+        <input
+          [disabled]="warehouseman"
+          type="text"
+          [(ngModel)]="item.name"
+          name="nameItem_{{ item.id }}"
+          class="form-control"
+          id="nameRequester_{{ item.id }}"
+          aria-describedby="nameRequester"
+          placeholder="Digite"
+        />
+      </td>
+      <td class="form-group col">
+        <label for="itemDetail">Descrição do item</label>
+        <input
+          [disabled]="warehouseman"
+          type="text"
+          [(ngModel)]="item.item.description"
+          name="descriptionItem_{{ item.id }}"
+          class="form-control"
+          id="itemDetail"
+          placeholder="Digite"
+        />
+      </td>
+      <td class="form-group col">
+        <label for="priceProduct">Preço do produto</label>
+        <input
+          [disabled]="warehouseman"
+          type="text"
+          [(ngModel)]="item.item.price"
+          class="form-control"
+          name="priceProduct_{{ item.id }}"
+          id="priceProduct"
+          placeholder="R$ 0,00"
+        />
+      </td>
+      <td class="form-group col">
+        <label for="status">Status</label>
+        <select
+          class="form-control form-select form-select-lg mb-3"
+          id="status"
+          aria-label=".form-select-lg example"
+        >
+          <option selected disabled>Selecione</option>
+          <option *ngFor="let status of statusOptions" [value]="status.id">
+            {{ status.status }}
+          </option>
+        </select>
+      </td>
+    </div>
+    <div class="row">
+      <td class="form-group col" *ngIf="item.item.status">
+        <label for="observation">Observações</label>
+        <input
+          type="text"
+          [(ngModel)]="item.item.observation"
+          class="form-control"
+          name="observation_{{ item.id }}"
+          id="observation"
+          placeholder="Digite"
+        />
+      </td>
+    </div>
+  </tr>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+
+<!-- Página do Administrativo -->
+<form #f="ngForm">
+  <tr class="filters row">
+    <td class="form-group col-5">
+      <label for="filterName">Nome do solicitante</label>
+      <input
+        type="text"
+        [(ngModel)]="filters.name"
+        name="filterName"
+        class="form-control"
+        id="filterName"
+        aria-describedby="filter"
+        placeholder="Digite"
+      />
+    </td>
+    <td class="form-group col-3">
+      <label for="status">Status</label>
+      <select
+        class="form-control form-select form-select-lg mb-3"
+        id="status"
+        aria-label=".form-select-lg example"
+      >
+        <option selected disabled>Selecione</option>
+        <option *ngFor="let status of statusOptions" [value]="status.id">
+          {{ status.status }}
+        </option>
+      </select>
+    </td>
+  </tr>
+  <tr *ngFor="let item of items; let i = index">
+    <div class="row">
+      <td class="form-group col">
+        <label for="nameRequester">Nome do solicitante</label>
+        <input
+          [disabled]="warehouseman"
+          type="text"
+          [(ngModel)]="item.name"
+          name="nameItem_{{ item.id }}"
+          class="form-control"
+          id="nameRequester_{{ item.id }}"
+          aria-describedby="nameRequester"
+          placeholder="Digite"
+        />
+      </td>
+      <td class="form-group col">
+        <label for="itemDetail">Descrição do item</label>
+        <input
+          [disabled]="warehouseman"
+          type="text"
+          [(ngModel)]="item.item.description"
+          name="descriptionItem_{{ item.id }}"
+          class="form-control"
+          id="itemDetail"
+          placeholder="Digite"
+        />
+      </td>
+      <td class="form-group col">
+        <label for="priceProduct">Preço do produto</label>
+        <input
+          [disabled]="warehouseman"
+          type="text"
+          [(ngModel)]="item.item.price"
+          class="form-control"
+          name="priceProduct_{{ item.id }}"
+          id="priceProduct"
+          placeholder="R$ 0,00"
+        />
+      </td>
+      <td class="form-group col">
+        <label for="status">Status</label>
+        <select
+          class="form-control form-select form-select-lg mb-3"
+          id="status"
+          aria-label=".form-select-lg example"
+        >
+          <option selected disabled>Selecione</option>
+          <option *ngFor="let status of statusOptions" [value]="status.id">
+            {{ status.status }}
+          </option>
+        </select>
+      </td>
+    </div>
+    <div class="row">
+      <td class="form-group col" *ngIf="item.item.status">
+        <label for="observation">Observações</label>
+        <input
+          type="text"
+          [(ngModel)]="item.item.observation"
+          class="form-control"
+          name="observation_{{ item.id }}"
+          id="observation"
+          placeholder="Digite"
+        />
+      </td>
+    </div>
+  </tr>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
