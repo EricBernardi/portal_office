@@ -1,0 +1,27 @@
+<tr class="filters row">
+  <td class="form-group col-5">
+    <label for="filterName">Nome do solicitante</label>
+    <input
+      type="text"
+      [(ngModel)]="filters.name"
+      name="filterName"
+      class="form-control"
+      id="filterName"
+      aria-describedby="filter"
+      placeholder="Digite"
+    />
+  </td>
+  <td class="form-group col-3">
+    <label for="status">Status</label>
+    <select
+      class="form-control form-select form-select-lg mb-3"
+      id="status"
+      aria-label=".form-select-lg example"
+    >
+      <option selected disabled>Selecione</option>
+      <option *ngFor="let status of statusOptions" [value]="status.id">
+        {{ status.status }}
+      </option>
+    </select>
+  </td>
+</tr>

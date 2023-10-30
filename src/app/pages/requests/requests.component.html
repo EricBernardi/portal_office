@@ -1,0 +1,38 @@
+<div class="m-3">
+  <div class="form-group">
+    <label for="nameRequester">Nome do solicitante</label>
+    <input
+      type="text"
+      [(ngModel)]="user.nameUser"
+      name="nameItem"
+      class="form-control"
+      id="nameRequester"
+      aria-describedby="nameRequester"
+      placeholder="Digite"
+    />
+  </div>
+  <div class="form-group">
+    <label for="itemDetail">Descrição do item</label>
+    <input
+      type="text"
+      [(ngModel)]="user.item.descriptionItem"
+      name="descriptionItem"
+      class="form-control"
+      id="itemDetail"
+      placeholder="Digite"
+    />
+  </div>
+  <div class="form-group">
+    <label for="priceProduct">Preço do produto</label>
+    <input
+      type="text"
+      [(ngModel)]="user.item.priceItem"
+      class="form-control"
+      name="priceProduct"
+      id="priceProduct"
+      placeholder="R$ 0,00"
+    />
+  </div>
+  <button [disabled]="!areFieldsFilled()" type="button" class="btn btn-primary" onclick="alert('Enviado')">Enviar solicitação</button>
+
+</div>
