@@ -1,0 +1,68 @@
+<div class="m-3">
+  <app-filters></app-filters>
+<tr *ngFor="let item of items; let i = index">
+  <div class="row">
+    <td class="form-group col">
+      <label for="nameRequester">Nome do solicitante</label>
+      <input
+        [disabled]="warehouseman"
+        type="text"
+        [(ngModel)]="item.name"
+        name="nameItem_{{ item.id }}"
+        class="form-control"
+        id="nameRequester_{{ item.id }}"
+        aria-describedby="nameRequester"
+        placeholder="Digite"
+      />
+    </td>
+    <td class="form-group col">
+      <label for="itemDetail">Descrição do item</label>
+      <input
+        [disabled]="warehouseman"
+        type="text"
+        [(ngModel)]="item.item.description"
+        name="descriptionItem_{{ item.id }}"
+        class="form-control"
+        id="itemDetail"
+        placeholder="Digite"
+      />
+    </td>
+    <td class="form-group col">
+      <label for="priceProduct">Preço do produto</label>
+      <input
+        [disabled]="warehouseman"
+        type="text"
+        [(ngModel)]="item.item.price"
+        class="form-control"
+        name="priceProduct_{{ item.id }}"
+        id="priceProduct"
+        placeholder="R$ 0,00"
+      />
+    </td>
+    <td class="form-group col">
+      <label for="status">Status</label>
+      <input
+      [disabled]="warehouseman"
+      type="text"
+      class="form-control form-select form-select-lg mb-3"
+      id="status"
+      [value]="item.item.status ? 'Reprovado' : 'Aprovado'"
+      />
+    </td>
+  </div>
+  <div class="row">
+    <td class="form-group col" *ngIf="item.item.status">
+      <label for="observation">Observações</label>
+      <input
+      [disabled]="warehouseman"
+        type="text"
+        class="form-control"
+        name="observation_{{ item.id }}"
+        id="observation"
+        [value]="item.item.observation"
+      />
+    </td>
+  </div>
+</tr>
+
+</div>
