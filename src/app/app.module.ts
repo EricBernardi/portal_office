@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RequestsComponent } from './pages/requests/requests.component';
 import { RouterModule } from '@angular/router';
 import { ListAllComponent } from './pages/list-all/list-all.component';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ListAllComponent } from './pages/list-all/list-all.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    CurrencyMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
