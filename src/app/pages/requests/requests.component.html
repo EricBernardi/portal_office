@@ -27,10 +27,12 @@
     <input
       type="text"
       [(ngModel)]="user.item.priceItem"
-      class="form-control"
+      class="form-control text-left"
       name="priceProduct"
       id="priceProduct"
       placeholder="R$ 0,00"
+      currencyMask="BRL"
+      [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
     />
   </div>
   <button [disabled]="!areFieldsFilled()" type="button" class="btn btn-primary" onclick="alert('Enviado')">Enviar solicitação</button>
